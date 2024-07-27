@@ -1,0 +1,30 @@
+<Page>:
+    BoxLayout:
+        size:root.size
+        padding: 10
+        orientation:"vertical"
+        spacing:4
+        Text_between_entry:
+            text:"dec"
+        Number_Entry:
+            id:Number_Entry_dec
+            on_text:root.transform()
+
+        Text_between_entry:
+            text:"bin"
+        Number_Entry:
+            id:Number_Entry_bin
+            on_text: root.transformb()
+
+<Number_Entry@TextInput>
+    input_filter: "int"
+    cursor_color: 0,0,0,1
+
+<Text_between_entry@Label>
+    size_hint:1,.2
+    canvas.before:
+        Color:
+            rgba:(38/255, 38/255, 38/255, 1)
+        Rectangle:
+            pos:self.pos
+            size:self.size
